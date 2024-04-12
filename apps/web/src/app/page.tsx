@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@repo/ui/button";
+import { Button } from "@repo/ui/components/ui/button";
 import { useEffect, useState } from "react";
 import { Card } from "@repo/ui/card";
 import Image from "next/image";
@@ -139,6 +139,7 @@ export default function Web() {
           </Card>
         ))}
       </div>
+      <Button size={"lg"} variant={"destructive"}>HELLO</Button>
     </main>
   );
 }
