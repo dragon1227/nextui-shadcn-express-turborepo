@@ -1,0 +1,15 @@
+{
+  "name": "@repo/tailwind-config",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "exports": {
+    ".": "./tailwind.config.ts"
+  },
+  "dependencies": {
+    "@repo/typescript-config": "*"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.3"
+  }
+}
