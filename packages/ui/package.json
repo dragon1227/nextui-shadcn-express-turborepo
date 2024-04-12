@@ -9,14 +9,18 @@
     "./global.css": "./src/styles/global.css",
     "./lib/*": "./src/lib/*.ts",
     "./components/*": "./src/components/*.tsx",
-    "./card": "./src/card.tsx"
+    "./card": "./src/card.tsx",
+    "./nextui/*": "./src/nextui/*.tsx",
+    "./tailwind.config.ts": "./tailwind.config.ts",
+    "./providers/*": "./src/providers/*.tsx"
   },
   "scripts": {
-    "build": "tailwindcss -i ./src/styles.css -o ./dist/index.css",
+    "build": "tailwindcss -i ./src/styles/global.css -o ./dist/index.css",
     "lint": "eslint src/",
-    "dev": "tailwindcss -i ./src/styles.css -o ./dist/index.css --watch",
+    "dev": "tailwindcss -i ./src/styles/global.css -o ./dist/index.css --watch",
     "type-check": "tsc --noEmit",
-    "ui:add": "npx shadcn-ui@latest add"
+    "ui:add": "npx shadcn-ui@latest add",
+    "clean": "rm -rf dist && rm -rf .turbo && rm -rf node_modules"
   },
   "peerDependencies": {
     "react": "^18.2.0"
@@ -35,10 +39,14 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
+    "@nextui-org/button": "^2.0.27",
+    "@nextui-org/react": "^2.2.10",
     "@radix-ui/react-slot": "^1.0.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
+    "framer-motion": "^11.0.28",
     "lucide-react": "^0.368.0",
+    "next-themes": "^0.3.0",
     "tailwind-merge": "^2.2.2",
     "tailwindcss-animate": "^1.0.7"
   }

@@ -1,7 +1,7 @@
 "use client";
 
-import { Button } from "@repo/ui/components/ui/button";
-import { useEffect, useState } from "react";
+import { Button } from "@repo/ui/nextui/button";
+import { Button as ShadcnButton } from "@repo/ui/components/ui/button";
 import { Card } from "@repo/ui/card";
 import Image from "next/image";
 
@@ -46,15 +46,15 @@ const LINKS = [
   },
 ];
 
-const API_HOST = process.env.NEXT_PUBLIC_API_HOST || "http://localhost:3001";
+// const API_HOST = process.env.NEXT_PUBLIC_API_HOST || "http://localhost:3001";
 
-export default function Web() {
+export default function Web(): JSX.Element {
 
   return (
     <main className="flex flex-col items-center justify-between min-h-screen p-24">
       <div className="z-10 items-center justify-between w-full max-w-5xl font-mono text-sm lg:flex">
         <p className="fixed top-0 left-0 flex justify-center w-full px-4 pt-8 pb-6 border-b bg-gradient-to-b backdrop-blur-2xl border-neutral-800 bg-zinc-800/30 from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:bg-zinc-800/30">
-          examples/with-tailwind -&nbsp;
+          NextJS / Tailwindcss / NextUI / Shadcn-UI / ExpressJS / Docker -&nbsp;
           <code className="font-mono font-bold">web</code>
         </p>
         <div className="fixed bottom-0 left-0 flex items-end justify-center w-full h-48 bg-gradient-to-t from-black via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
@@ -139,7 +139,10 @@ export default function Web() {
           </Card>
         ))}
       </div>
-      <Button size={"lg"} variant={"destructive"}>HELLO</Button>
+      <div className="flex items-center gap-2">
+        <Button color="primary" variant="solid">NextUI</Button>
+        <ShadcnButton>Shadcn-UI</ShadcnButton>
+      </div>
     </main>
   );
 }
