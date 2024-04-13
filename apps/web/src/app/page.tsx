@@ -139,9 +139,19 @@ export default function Web(): JSX.Element {
           </Card>
         ))}
       </div>
-      <div className="flex items-center gap-2">
-        <Button color="primary" variant="solid">NextUI</Button>
-        <ShadcnButton>Shadcn-UI</ShadcnButton>
+      <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2">
+          <Button color="primary" variant="solid">NextUI</Button>
+          <ShadcnButton variant="default">Shadcn-UI</ShadcnButton>
+        </div>
+        <div className="flex items-center gap-2">
+          <Button color="secondary" variant="solid">NextUI</Button>
+          <ShadcnButton variant="secondary">Shadcn-UI</ShadcnButton>
+        </div>
+        <div className="flex items-center gap-2">
+          <Button color="danger" variant="solid">NextUI</Button>
+          <ShadcnButton variant="destructive">Shadcn-UI</ShadcnButton>
+        </div>
       </div>
     </main>
   );
