@@ -5,8 +5,8 @@ const project = resolve(process.cwd(), "tsconfig.json");
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
   extends: [
-    // "eslint:recommended",
-    // "prettier",
+    "eslint:recommended",
+    "prettier",
     "@vercel/style-guide/eslint/node",
     "@vercel/style-guide/eslint/typescript",
     "@vercel/style-guide/eslint/browser",

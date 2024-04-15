@@ -12,7 +12,8 @@
     "./card": "./src/card.tsx",
     "./nextui/*": "./src/nextui/*.tsx",
     "./tailwind.config.ts": "./tailwind.config.ts",
-    "./providers/*": "./src/providers/*.tsx"
+    "./providers/*": "./src/providers/*.tsx",
+    "./icons": "./src/icons/index.ts"
   },
   "scripts": {
     "build": "tailwindcss -i ./src/styles/global.css -o ./dist/index.css",
@@ -41,7 +42,12 @@
   "dependencies": {
     "@nextui-org/button": "^2.0.27",
     "@nextui-org/react": "^2.2.10",
+    "@nextui-org/spinner": "^2.0.25",
+    "@radix-ui/react-avatar": "^1.0.4",
+    "@radix-ui/react-dialog": "^1.0.5",
+    "@radix-ui/react-dropdown-menu": "^2.0.6",
     "@radix-ui/react-slot": "^1.0.2",
+    "@radix-ui/react-tooltip": "^1.0.7",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "framer-motion": "^11.0.28",

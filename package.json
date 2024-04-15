@@ -9,7 +9,7 @@
   "scripts": {
     "build": "turbo run build",
     "clean": "turbo run clean && rm -rf .turbo && rm -rf node_modules",
-    "dev": "turbo run dev",
+    "dev": "dotenv -- turbo run dev",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "lint": "turbo run lint",
     "test": "turbo run test"
@@ -17,6 +17,7 @@
   "dependencies": {},
   "devDependencies": {
     "@repo/eslint-config": "*",
+    "dotenv-cli": "^7.4.1",
     "prettier": "^3.2.5",
     "turbo": "latest"
   },
@@ -26,4 +27,3 @@
     "npm": ">=7.0.0"
   }
 }
-
