@@ -1,6 +1,10 @@
-# Turborepo Docker starter
+# NextUI Shadcn-UI NextJS Auth.js ExpressJS Docker Turborepo starter
 
-This is an official Docker starter Turborepo.
+![image](https://github.com/dragon1227/nextui-shadcn-express-turborepo/assets/122885050/d387d837-dcb8-44d5-9364-e3edeada4745)
+![image](https://github.com/dragon1227/nextui-shadcn-express-turborepo/assets/122885050/0378a70b-7b9f-40b1-b5b1-a64f28db675b)
+![image](https://github.com/dragon1227/nextui-shadcn-express-turborepo/assets/122885050/bf2b4640-4680-4af2-aa83-b6e47c3643ab)
+![image](https://github.com/dragon1227/nextui-shadcn-express-turborepo/assets/122885050/16d25532-933a-4715-92ab-bc232c59f9bf)
+
 
 ## Using this example
 
