@@ -1,5 +1,5 @@
 import Google from "next-auth/providers/google";
-import NextAuth, { type NextAuthConfig } from "next-auth";
+import { type NextAuthConfig } from "next-auth";
 
 export const authOptions = {
   session: { strategy: "jwt" },
@@ -14,5 +14,5 @@ export const authOptions = {
     signIn: "/auth/signin",
     error: "/auth/signin",
   },
-  debug: true,
+  debug: process.env.NODE_ENV === "development",
 } satisfies NextAuthConfig;

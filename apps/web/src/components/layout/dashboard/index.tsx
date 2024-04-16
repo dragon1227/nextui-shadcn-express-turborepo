@@ -1,5 +1,3 @@
-'use client'
-
 import type { ReactNode } from "react";
 import Image from "next/image"
 import Link from "next/link"
@@ -10,7 +8,6 @@ import {
   Package2,
   PanelLeft,
   Search,
-  Settings,
   ShoppingCart,
   Users2,
 } from "@repo/ui/icons"
@@ -34,8 +31,13 @@ import {
 import { Input } from "@repo/ui/components/ui/input"
 import { Sheet, SheetContent, SheetTrigger } from "@repo/ui/components/ui/sheet"
 import DashboardLayoutSidebarComponent from "./sidebar";
+import { auth } from "@/auth";
+import { redirect } from "next/navigation";
+import UserDropdownComponent from "../common/user-dropdown";
+import { SiteDefaultIcons, siteTitle } from "@/config/const";
+import { siteRoutes } from "@/config/routes";
 
-export default function DashboardLayoutComponent({ children }: { children: ReactNode }): JSX.Element {
+export default async function DashboardLayoutComponent({ children }: { children: ReactNode }) {
   return (
     <div className="flex flex-col w-full min-h-screen bg-muted/40">
       <DashboardLayoutSidebarComponent />
@@ -54,44 +56,19 @@ export default function DashboardLayoutComponent({ children }: { children: React
                   className="flex items-center justify-center w-10 h-10 gap-2 text-lg font-semibold rounded-full group shrink-0 bg-primary text-primary-foreground md:text-base"
                   href="#"
                 >
-                  <Package2 className="w-5 h-5 transition-all group-hover:scale-110" />
-                  <span className="sr-only">Acme Inc</span>
+                  <SiteDefaultIcons />
+                  <span className="sr-only">{siteTitle}</span>
                 </Link>
-                <Link
-                  className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
-                  href="#"
-                >
-                  <Home className="w-5 h-5" />
-                  Dashboard
-                </Link>
-                <Link
-                  className="flex items-center gap-4 px-2.5 text-foreground"
-                  href="#"
-                >
-                  <ShoppingCart className="w-5 h-5" />
-                  Orders
-                </Link>
-                <Link
-                  className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
-                  href="#"
-                >
-                  <Package className="w-5 h-5" />
-                  Products
-                </Link>
-                <Link
-                  className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
-                  href="#"
-                >
-                  <Users2 className="w-5 h-5" />
-                  Customers
-                </Link>
-                <Link
-                  className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
-                  href="#"
-                >
-                  <LineChart className="w-5 h-5" />
-                  Settings
-                </Link>
+                {siteRoutes.map((item, idx) =>
+                  <Link
+                    key={idx}
+                    className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
+                    href={item.href}
+                  >
+                    {item.component}
+                    {item.title}
+                  </Link>)
+                }
               </nav>
             </SheetContent>
           </Sheet>
@@ -122,31 +99,7 @@ export default function DashboardLayoutComponent({ children }: { children: React
               type="search"
             />
           </div>
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button
-                className="overflow-hidden rounded-full"
-                size="icon"
-                variant="outline"
-              >
-                <Image
-                  alt="Avatar"
-                  className="overflow-hidden rounded-full"
-                  height={36}
-                  src="/placeholder-user.jpg"
-                  width={36}
-                />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
-              <DropdownMenuLabel>My Account</DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>Settings</DropdownMenuItem>
-              <DropdownMenuItem>Support</DropdownMenuItem>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>Logout</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+          <UserDropdownComponent />
         </header>
         <main className="flex flex-col flex-1 gap-4 p-4 lg:gap-6 lg:p-6">
           {children}

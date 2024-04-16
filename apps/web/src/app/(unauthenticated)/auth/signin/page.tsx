@@ -6,7 +6,10 @@ import { useRouter } from "next/navigation"
 import { useEffect } from "react"
 import { Button } from "@repo/ui/components/ui/button"
 import { Spinner } from "@repo/ui/components/ui/spinner"
+import { Spacer } from "@repo/ui/components/nextui/spacer"
 import { authOptions } from "@/auth.config"
+import { SiteDefaultIcons, siteTitle } from "@/config/const"
+import Link from "next/link"
 
 export default function SignInPage({
   searchParams: {
@@ -33,10 +36,11 @@ export default function SignInPage({
   return (
     <>
       <div className="grid gap-2 text-center">
-        <h1 className="text-3xl font-bold">Login</h1>
-        <p className="text-balance text-muted-foreground">
-          Sign In with Next-Auth
-        </p>
+        <Link href={'/'}>
+          <div className="flex w-full justify-center"><SiteDefaultIcons className="w-12 h-12" /></div>
+          <Spacer y={2} />
+          <h1 className="text-3xl font-bold">{siteTitle}</h1>
+        </Link>
       </div>
       {error && error !== 'undefined' ? <div className="w-full bg-destructive/30 p-2 rounded-md border">
         {error}

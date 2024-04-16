@@ -32,6 +32,9 @@ import {
 import { Input } from "@repo/ui/components/ui/input"
 import { Sheet, SheetContent, SheetTrigger } from "@repo/ui/components/ui/sheet"
 import ThemeSwitcherComponent from "@repo/ui/components/shared/theme-switcher"
+import { siteRoutes } from "@/config/routes"
+import { SiteDefaultIcons, siteTitle } from "@/config/const"
+import UserDropdownComponent from "../common/user-dropdown"
 
 export default function AdminLayoutNavbarComponent(): JSX.Element {
   return (
@@ -53,47 +56,17 @@ export default function AdminLayoutNavbarComponent(): JSX.Element {
               className="flex items-center gap-2 text-lg font-semibold"
               href="#"
             >
-              <Package2 className="w-6 h-6" />
-              <span className="sr-only">Acme Inc</span>
+              <SiteDefaultIcons />
+              <span className="sr-only">{siteTitle}</span>
             </Link>
-            <Link
+            {siteRoutes.map((item, idx) => <Link
               className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
-              href="#"
+              href={item.href}
+              key={idx}
             >
-              <Home className="w-5 h-5" />
-              Dashboard
-            </Link>
-            <Link
-              className="mx-[-0.65rem] flex items-center gap-4 rounded-xl bg-muted px-3 py-2 text-foreground hover:text-foreground"
-              href="#"
-            >
-              <ShoppingCart className="w-5 h-5" />
-              Orders
-              <Badge className="flex items-center justify-center w-6 h-6 ml-auto rounded-full shrink-0">
-                6
-              </Badge>
-            </Link>
-            <Link
-              className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
-              href="#"
-            >
-              <Package className="w-5 h-5" />
-              Products
-            </Link>
-            <Link
-              className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
-              href="#"
-            >
-              <Users className="w-5 h-5" />
-              Customers
-            </Link>
-            <Link
-              className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
-              href="#"
-            >
-              <LineChart className="w-5 h-5" />
-              Analytics
-            </Link>
+              {item.component}
+              {item.title}
+            </Link>)}
           </nav>
           <div className="mt-auto">
             <Card>
@@ -126,22 +99,7 @@ export default function AdminLayoutNavbarComponent(): JSX.Element {
         </form>
       </div>
       <ThemeSwitcherComponent />
-      <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <Button className="rounded-full" size="icon" variant="secondary">
-            <CircleUser className="w-5 h-5" />
-            <span className="sr-only">Toggle user menu</span>
-          </Button>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent align="end">
-          <DropdownMenuLabel>My Account</DropdownMenuLabel>
-          <DropdownMenuSeparator />
-          <DropdownMenuItem>Settings</DropdownMenuItem>
-          <DropdownMenuItem>Support</DropdownMenuItem>
-          <DropdownMenuSeparator />
-          <DropdownMenuItem>Logout</DropdownMenuItem>
-        </DropdownMenuContent>
-      </DropdownMenu>
+      <UserDropdownComponent />
     </header>
   )
 }

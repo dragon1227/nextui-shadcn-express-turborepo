@@ -4,7 +4,7 @@ import { nextui } from "@nextui-org/react";
 
 const config: Pick<
   Config,
-  "prefix" | "presets" | "content" | "theme" | "plugins"
+  "prefix" | "presets" | "content" | "theme" | "plugins" | "darkMode"
 > = {
   theme: {
     container: {
@@ -81,6 +81,7 @@ const config: Pick<
     "../.././node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   presets: [sharedConfig],
+  darkMode: "class",
   plugins: [nextui({}), require("tailwindcss-animate")],
 };
 

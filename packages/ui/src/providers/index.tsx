@@ -3,7 +3,6 @@
 import React from "react";
 import { NextUIProvider } from "@nextui-org/react";
 import { ThemeProvider } from "next-themes";
-import type { ThemeProviderProps } from "next-themes/dist/types";
 
 interface ProvidersProps {
   children: React.ReactNode;

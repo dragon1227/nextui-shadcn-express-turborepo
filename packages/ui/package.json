@@ -10,7 +10,6 @@
     "./lib/*": "./src/lib/*.ts",
     "./components/*": "./src/components/*.tsx",
     "./card": "./src/card.tsx",
-    "./nextui/*": "./src/nextui/*.tsx",
     "./tailwind.config.ts": "./tailwind.config.ts",
     "./providers/*": "./src/providers/*.tsx",
     "./icons": "./src/icons/index.ts"
@@ -21,6 +20,9 @@
     "dev": "tailwindcss -i ./src/styles/global.css -o ./dist/index.css --watch",
     "type-check": "tsc --noEmit",
     "ui:add": "npx shadcn-ui@latest add",
+    "nextui:add": "npx nextui-cli@latest add",
+    "nextui:remove": "npx nextui-cli@latest remove",
+    "nextui:upgrade": "npx nextui-cli@latest upgrade",
     "clean": "rm -rf dist && rm -rf .turbo && rm -rf node_modules"
   },
   "peerDependencies": {
@@ -40,9 +42,13 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
+    "@nextui-org/avatar": "^2.0.25",
     "@nextui-org/button": "^2.0.27",
-    "@nextui-org/react": "^2.2.10",
+    "@nextui-org/react": "^2.3.0",
+    "@nextui-org/spacer": "^2.0.25",
     "@nextui-org/spinner": "^2.0.25",
+    "@nextui-org/system": "^2.1.0",
+    "@nextui-org/theme": "^2.2.0",
     "@radix-ui/react-avatar": "^1.0.4",
     "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-dropdown-menu": "^2.0.6",
