@@ -1,5 +1,6 @@
 import Google from "next-auth/providers/google";
-import { type NextAuthConfig } from "next-auth";
+import type { NextAuthConfig } from "next-auth";
+import sign from "jwt-encode";
 
 export const authOptions = {
   session: { strategy: "jwt" },
@@ -15,4 +16,10 @@ export const authOptions = {
     error: "/auth/signin",
   },
   debug: process.env.NODE_ENV === "development",
+  callbacks: {
+    async session({ session, token, user }) {
+      session.sessionToken = sign(session.user, process.env.AUTH_SECRET!);
+      return session;
+    },
+  },
 } satisfies NextAuthConfig;

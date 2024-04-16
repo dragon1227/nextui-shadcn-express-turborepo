@@ -4,11 +4,11 @@ import Link from "next/link"
 import {
   Menu,
   Search,
-} from "@repo/ui/icons"
-import { Button } from "@repo/ui/components/ui/button"
-import { Input } from "@repo/ui/components/ui/input"
-import { Sheet, SheetContent, SheetTrigger } from "@repo/ui/components/ui/sheet"
-import ThemeSwitcher from "@repo/ui/components/shared/theme-switcher"
+} from "@ui/icons"
+import { Button } from "@ui/components/ui/button"
+import { Input } from "@ui/components/ui/input"
+import { Sheet, SheetContent, SheetTrigger } from "@ui/components/ui/sheet"
+import ThemeSwitcher from "@ui/components/shared/theme-switcher"
 import { siteRoutes } from "@/config/routes"
 import UserDropdownComponent from "../common/user-dropdown"
 import { SiteDefaultIcons, siteTitle } from "@/config/const"

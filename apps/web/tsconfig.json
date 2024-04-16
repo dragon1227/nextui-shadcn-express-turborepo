@@ -6,7 +6,8 @@
     "paths": {
       "@/*": ["./src/*"],
       "@ui/*": ["../../packages/ui/src/*"],
-      "next-auth/*": ["../../node_modules/next-auth/*"]
+      "next-auth/*": ["../../node_modules/next-auth/*"],
+      "js-cookie/*": ["../../node_modules/js-cookie/*"]
     }
   },
   "include": [

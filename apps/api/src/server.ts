@@ -2,6 +2,7 @@ import { json, urlencoded } from "body-parser";
 import express from "express";
 import morgan from "morgan";
 import cors from "cors";
+import apiRouter from "./routes/api";
 
 export const createServer = () => {
   const app = express();
@@ -16,7 +17,11 @@ export const createServer = () => {
     })
     .get("/healthz", (req, res) => {
       return res.json({ ok: true });
-    });
+    })
+    .get("/", (req, res) => {
+      return res.json({ ok: true });
+    })
+    .use("/api", apiRouter);
 
   return app;
 };

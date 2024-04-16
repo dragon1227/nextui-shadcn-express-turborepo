@@ -36,6 +36,7 @@ import { redirect } from "next/navigation";
 import UserDropdownComponent from "../common/user-dropdown";
 import { SiteDefaultIcons, siteTitle } from "@/config/const";
 import { siteRoutes } from "@/config/routes";
+import ThemeSwitcherComponent from "@ui/components/shared/theme-switcher";
 
 export default async function DashboardLayoutComponent({ children }: { children: ReactNode }) {
   return (
@@ -99,6 +100,7 @@ export default async function DashboardLayoutComponent({ children }: { children:
               type="search"
             />
           </div>
+          <ThemeSwitcherComponent />
           <UserDropdownComponent />
         </header>
         <main className="flex flex-col flex-1 gap-4 p-4 lg:gap-6 lg:p-6">

@@ -11,16 +11,16 @@ import {
   Search,
   ShoppingCart,
   Users,
-} from "@repo/ui/icons"
-import { Badge } from "@repo/ui/components/ui/badge"
-import { Button } from "@repo/ui/components/ui/button"
+} from "@ui/icons"
+import { Badge } from "@ui/components/ui/badge"
+import { Button } from "@ui/components/ui/button"
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@repo/ui/components/ui/card"
+} from "@ui/components/ui/card"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -28,10 +28,10 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@repo/ui/components/ui/dropdown-menu"
-import { Input } from "@repo/ui/components/ui/input"
-import { Sheet, SheetContent, SheetTrigger } from "@repo/ui/components/ui/sheet"
-import ThemeSwitcherComponent from "@repo/ui/components/shared/theme-switcher"
+} from "@ui/components/ui/dropdown-menu"
+import { Input } from "@ui/components/ui/input"
+import { Sheet, SheetContent, SheetTrigger } from "@ui/components/ui/sheet"
+import ThemeSwitcherComponent from "@ui/components/shared/theme-switcher"
 import { siteRoutes } from "@/config/routes"
 import { SiteDefaultIcons, siteTitle } from "@/config/const"
 import UserDropdownComponent from "../common/user-dropdown"

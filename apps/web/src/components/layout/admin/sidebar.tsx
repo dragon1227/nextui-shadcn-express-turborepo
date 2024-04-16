@@ -3,15 +3,15 @@ import Link from "next/link"
 import {
   Bell,
   Package2,
-} from "@repo/ui/icons"
-import { Button } from "@repo/ui/components/ui/button"
+} from "@ui/icons"
+import { Button } from "@ui/components/ui/button"
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@repo/ui/components/ui/card"
+} from "@ui/components/ui/card"
 import { siteRoutes } from "@/config/routes"
 import { SiteDefaultIcons, siteTitle } from "@/config/const"
 
