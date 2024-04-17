@@ -3,7 +3,7 @@
   "compilerOptions": {
     "lib": ["ES2015"],
     "outDir": "./dist",
-    "rootDir": "./src",
+    "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
     }

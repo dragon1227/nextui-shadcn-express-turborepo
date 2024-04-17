@@ -1,0 +1,16 @@
+{
+  "extends": "@repo/typescript-config/node.json",
+  "compilerOptions": {
+    "plugins": [{ "name": "next" }],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "preserveSymlinks": true,
+    "outDir": "dist"
+  },
+  "ts-node": {
+    "swc": true
+  },
+  "exclude": ["node_modules"]
+}

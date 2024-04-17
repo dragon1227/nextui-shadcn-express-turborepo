@@ -1,15 +1,8 @@
 import type { ReactNode } from "react";
-import Image from "next/image"
 import Link from "next/link"
 import {
-  Home,
-  LineChart,
-  Package,
-  Package2,
   PanelLeft,
   Search,
-  ShoppingCart,
-  Users2,
 } from "@repo/ui/icons"
 import {
   Breadcrumb,
@@ -20,19 +13,9 @@ import {
   BreadcrumbSeparator,
 } from "@repo/ui/components/ui/breadcrumb"
 import { Button } from "@repo/ui/components/ui/button"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@repo/ui/components/ui/dropdown-menu"
 import { Input } from "@repo/ui/components/ui/input"
 import { Sheet, SheetContent, SheetTrigger } from "@repo/ui/components/ui/sheet"
 import DashboardLayoutSidebarComponent from "./sidebar";
-import { auth } from "@/auth";
-import { redirect } from "next/navigation";
 import UserDropdownComponent from "../common/user-dropdown";
 import { SiteDefaultIcons, siteTitle } from "@/config/const";
 import { siteRoutes } from "@/config/routes";

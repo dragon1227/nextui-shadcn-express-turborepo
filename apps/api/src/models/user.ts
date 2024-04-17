@@ -1,5 +1,5 @@
-import { T_User, T_UserRole } from "@repo/types/user";
-import { Schema, model, type Document } from "mongoose";
+import { T_User, T_UserRole } from "@repo/types";
+import { Schema, model, Document } from "mongoose";
 
 const userSchema: Schema = new Schema(
   {

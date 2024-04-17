@@ -1,4 +1,5 @@
 import NextAuth from "next-auth";
+import type { AppRouteHandlerFn } from "@auth/lib/types";
 import { authOptions } from "@/auth.config";
 
 const { auth } = NextAuth(authOptions);
@@ -7,9 +8,9 @@ const PUBLIC_ROUTES = ["/"];
 const DEFAULT_REDIRECT = "/dashboard";
 const ROOT = "/auth/signin";
 
-const middleware = auth((req) => {
+const middleware: AppRouteHandlerFn = auth((req) => {
   const { nextUrl } = req;
-  const isAuthenticated = !!req.auth;
+  const isAuthenticated = Boolean(req.auth);
   const isPublicRoute = PUBLIC_ROUTES.includes(nextUrl.pathname);
 
   if (isPublicRoute && isAuthenticated)

@@ -1,5 +1,5 @@
-import { T_ApiResponse } from "@repo/types/api";
-import { T_User } from "@repo/types/user";
+import { T_ApiResponse } from "@repo/types";
+import { T_User } from "@repo/types";
 import type { Request, Response } from "express";
 
 export const getProfile = async (req: Request, res: Response) => {

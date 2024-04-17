@@ -4,8 +4,11 @@
   "main": "./src/index.ts",
   "license": "MIT",
   "exports": {
-    "./*": [
-      "./src/*.ts"
+    ".": [
+      "./src/index.ts"
     ]
+  },
+  "dependencies": {
+    "@repo/typescript-config": "*"
   }
 }

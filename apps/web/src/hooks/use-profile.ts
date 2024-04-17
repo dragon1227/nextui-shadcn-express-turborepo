@@ -1,11 +1,11 @@
 import { QUERY_KEYS } from "@/config/const";
 import apiClient from "@/utils/apiClient";
-import { T_ApiResponse } from "@repo/types/api";
-import { T_User } from "@repo/types/user";
+import { T_ApiResponse } from "@repo/types";
+import { T_User } from "@repo/types";
 import { useQuery } from "@tanstack/react-query";
 import { AxiosError } from "axios";
 
-export const useProfile = () => {
+const useProfile = () => {
   const queryKey = [QUERY_KEYS.profile];
   const query = useQuery({
     queryKey,
@@ -31,3 +31,5 @@ export const useProfile = () => {
   });
   return { ...query, queryKey };
 };
+
+export { useProfile };
