@@ -1,28 +1,28 @@
 'use client'
 
-import { useProfile } from "@/hooks/use-profile";
 import { User } from "@ui/components/nextui/user"
 import { Button } from "@ui/components/nextui/button"
 import { Spinner } from "@ui/components/ui/spinner";
-import { RefreshCcwDot } from "lucide-react";
+import { RefreshCcwDot } from "@repo/ui/icons";
+import { useProfile } from "@/hooks/use-profile";
 
-export default function DashboardIndexPage() {
+export default function DashboardIndexPage(): JSX.Element {
   const { data: profile, error, isPending, refetch } = useProfile()
   return <>
     <div className="flex items-center">
       <h1 className="text-lg font-semibold md:text-2xl">Blank Page</h1>
     </div>
     <div
-      className="flex items-center justify-center flex-1 border border-dashed rounded-lg shadow-sm" x-chunk="dashboard-02-chunk-1"
+      className="flex items-center justify-center flex-1 border border-dashed rounded-lg shadow-sm"
     >
       <div className="flex flex-col items-center gap-1 text-center">
         <div className="flex items-center gap-2">{isPending ? <Spinner /> : error ? <div>{error.message}</div> :
-          <User name={profile?.name} description={profile?.email} avatarProps={{
-            src: profile?.image,
-            alt: profile?.name,
-            color: profile ? 'primary' : 'default'
-          }} />}
-          <Button isIconOnly isLoading={isPending} onClick={() => refetch()} radius="full" size="sm" color="primary"><RefreshCcwDot size={16} /></Button>
+          <User avatarProps={{
+            src: profile.image,
+            alt: profile.name,
+            color: 'primary'
+          }} description={profile.email} name={profile.name} />}
+          <Button color="primary" isIconOnly isLoading={isPending} onClick={() => { refetch(); }} radius="full" size="sm"><RefreshCcwDot size={16} /></Button>
         </div>
       </div>
     </div>

@@ -1,9 +1,9 @@
-import { LayoutDashboard, Package } from "@ui/icons"
+import { LayoutDashboard } from "@ui/icons"
 
 export const siteTitle = 'My Site';
-export function SiteDefaultIcons({ className = 'w-4 h-4' }: { className?: string }) {
+export function SiteDefaultIcons({ className = 'w-4 h-4' }: { className?: string }): JSX.Element {
   return (
-    <LayoutDashboard fillOpacity={1} fill="currentColor" className={className} absoluteStrokeWidth />
+    <LayoutDashboard absoluteStrokeWidth className={className} fill="currentColor" fillOpacity={1} />
   );
 }
 

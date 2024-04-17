@@ -2,16 +2,15 @@
 import Link from "next/link"
 import {
   Bell,
-  Package2,
-} from "@ui/icons"
-import { Button } from "@ui/components/ui/button"
+} from "@repo/ui/icons"
+import { Button } from "@repo/ui/components/ui/button"
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@ui/components/ui/card"
+} from "@repo/ui/components/ui/card"
 import { siteRoutes } from "@/config/routes"
 import { SiteDefaultIcons, siteTitle } from "@/config/const"
 
@@ -31,10 +30,10 @@ export default function AdminLayoutSidebarComponent(): JSX.Element {
         </div>
         <div className="flex-1">
           <nav className="grid items-start px-2 text-sm font-medium lg:px-4">
-            {siteRoutes.map((item, idx) => <Link
-              key={idx}
+            {siteRoutes.map((item) => <Link
               className="flex items-center gap-3 px-3 py-2 transition-all rounded-lg text-muted-foreground hover:text-primary"
               href={item.href}
+              key={item.href}
             >
               {item.component}
               {item.title}

@@ -1,7 +1,7 @@
 import { T_User, T_UserRole } from "@repo/types";
 import { Schema, model, Document } from "mongoose";
 
-const userSchema: Schema = new Schema(
+const userSchema = new Schema(
   {
     name: {
       type: String,

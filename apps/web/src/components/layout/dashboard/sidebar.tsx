@@ -1,13 +1,7 @@
 'use client'
 
 import {
-  Home,
-  LineChart,
-  Package,
-  Package2,
   Settings,
-  ShoppingCart,
-  Users2,
 } from "@repo/ui/icons"
 import {
   Tooltip,
@@ -18,7 +12,7 @@ import Link from "next/link"
 import { siteRoutes } from "@/config/routes"
 import { SiteDefaultIcons, siteTitle } from "@/config/const"
 
-export default function DashboardLayoutSidebarComponent() {
+export default function DashboardLayoutSidebarComponent(): JSX.Element {
   return (
     <aside className="fixed inset-y-0 left-0 z-10 flex-col hidden border-r w-14 bg-background sm:flex">
       <nav className="flex flex-col items-center gap-4 px-2 sm:py-5">
@@ -29,7 +23,7 @@ export default function DashboardLayoutSidebarComponent() {
           <SiteDefaultIcons />
           <span className="sr-only">{siteTitle}</span>
         </Link>
-        {siteRoutes.map((item, idx) => <Tooltip key={idx}>
+        {siteRoutes.map((item) => <Tooltip key={item.href}>
           <TooltipTrigger asChild>
             <Link
               className="flex items-center justify-center transition-colors rounded-lg h-9 w-9 text-muted-foreground hover:text-foreground md:h-8 md:w-8"

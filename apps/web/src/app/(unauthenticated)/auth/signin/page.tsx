@@ -7,9 +7,9 @@ import { useEffect } from "react"
 import { Button } from "@repo/ui/components/ui/button"
 import { Spinner } from "@repo/ui/components/ui/spinner"
 import { Spacer } from "@repo/ui/components/nextui/spacer"
+import Link from "next/link"
 import { authOptions } from "@/auth.config"
 import { SiteDefaultIcons, siteTitle } from "@/config/const"
-import Link from "next/link"
 
 export default function SignInPage({
   searchParams: {
@@ -29,14 +29,14 @@ export default function SignInPage({
     }
   }, [status, callbackUrl, router])
 
-  const onSignIn = async (id: string): Promise<any> => {
+  const onSignIn = async (id: string): Promise<void> => {
     await signIn(id)
   }
 
   return (
     <>
       <div className="grid gap-2 text-center">
-        <Link href={'/'}>
+        <Link href="/">
           <div className="flex w-full justify-center"><SiteDefaultIcons className="w-12 h-12" /></div>
           <Spacer y={2} />
           <h1 className="text-3xl font-bold">{siteTitle}</h1>
@@ -47,8 +47,8 @@ export default function SignInPage({
       </div> : null}
       <div className="grid gap-4">
         {status !== 'unauthenticated' ? <Spinner /> : authOptions.providers.map((provider) =>
-          <Button key={provider.name} onClick={() => onSignIn(provider.id)} variant="outline" className="w-full">
-            <Image alt="google" src={`https://authjs.dev/img/providers${provider.style?.logo}`} width={20} height={20} />
+          <Button className="w-full" key={provider.name} onClick={() => { onSignIn(provider.id) }} variant="outline">
+            <Image alt="google" height={20} src={`https://authjs.dev/img/providers${provider.style?.logo}`} width={20} />
             <span className="ml-2">Login with {provider.name}</span>
           </Button>
         )}

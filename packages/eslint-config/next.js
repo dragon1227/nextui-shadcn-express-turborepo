@@ -47,5 +47,10 @@ module.exports = {
   ],
   rules: {
     "import/no-default-export": "off",
+    "import/no-unresolved": "off",
+    "no-nested-ternary": "off",
+    "@typescript-eslint/no-floating-promises": "off",
+    "eslint-comments/require-description": "off",
+    camelcase: "off",
   },
 };

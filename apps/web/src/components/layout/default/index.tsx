@@ -3,7 +3,7 @@
 import type { ReactNode } from "react";
 import DefaultLayoutNavbarComponent from "./navbar";
 
-export default function DefaultLayoutComponent({ children }: { children: ReactNode }) {
+export default function DefaultLayoutComponent({ children }: { children: ReactNode }): JSX.Element {
   return (
     <div className="flex flex-col w-screen overflow-x-hidden min-h-screen">
       <DefaultLayoutNavbarComponent />

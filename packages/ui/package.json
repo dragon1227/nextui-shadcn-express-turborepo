@@ -25,9 +25,6 @@
     "nextui:upgrade": "npx nextui-cli@latest upgrade",
     "clean": "rm -rf dist && rm -rf .turbo && rm -rf node_modules"
   },
-  "peerDependencies": {
-    "react": "^18.2.0"
-  },
   "devDependencies": {
     "@repo/eslint-config": "*",
     "@repo/tailwind-config": "*",

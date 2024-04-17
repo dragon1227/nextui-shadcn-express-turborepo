@@ -1,9 +1,9 @@
-import { QUERY_KEYS } from "@/config/const";
-import apiClient from "@/utils/apiClient";
-import { T_ApiResponse } from "@repo/types";
-import { T_User } from "@repo/types";
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
+import type { T_ApiResponse, T_User } from "@repo/types";
 import { useQuery } from "@tanstack/react-query";
-import { AxiosError } from "axios";
+import type { AxiosError } from "axios";
+import apiClient from "@/utils/api-client";
+import { QUERY_KEYS } from "@/config/const";
 
 const useProfile = () => {
   const queryKey = [QUERY_KEYS.profile];
@@ -19,13 +19,14 @@ const useProfile = () => {
           if (data.success) {
             const user = data.data;
             return user;
-          } else {
-            throw new Error(data.message ?? "Error");
           }
+          throw new Error(data.message ?? "Error");
         })
         .catch((error: AxiosError) => {
-          // @ts-expect-error
-          throw new Error(error.response?.data?.message ?? error.message);
+          throw new Error(
+            // @ts-expect-error self defined
+            (error.response?.data?.message ?? error.message) as string,
+          );
         });
     },
   });

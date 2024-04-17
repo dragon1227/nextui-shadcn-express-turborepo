@@ -2,39 +2,23 @@
 
 import Link from "next/link"
 import {
-  CircleUser,
-  Home,
-  LineChart,
   Menu,
-  Package,
-  Package2,
   Search,
-  ShoppingCart,
-  Users,
-} from "@ui/icons"
-import { Badge } from "@ui/components/ui/badge"
-import { Button } from "@ui/components/ui/button"
+} from "@repo/ui/icons"
+import { Button } from "@repo/ui/components/ui/button"
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@ui/components/ui/card"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@ui/components/ui/dropdown-menu"
-import { Input } from "@ui/components/ui/input"
-import { Sheet, SheetContent, SheetTrigger } from "@ui/components/ui/sheet"
-import ThemeSwitcherComponent from "@ui/components/shared/theme-switcher"
+} from "@repo/ui/components/ui/card"
+import { Input } from "@repo/ui/components/ui/input"
+import { Sheet, SheetContent, SheetTrigger } from "@repo/ui/components/ui/sheet"
+import ThemeSwitcherComponent from "@repo/ui/components/shared/theme-switcher"
+import UserDropdownComponent from "@/components/layout/common/user-dropdown"
 import { siteRoutes } from "@/config/routes"
 import { SiteDefaultIcons, siteTitle } from "@/config/const"
-import UserDropdownComponent from "../common/user-dropdown"
 
 export default function AdminLayoutNavbarComponent(): JSX.Element {
   return (
@@ -59,10 +43,10 @@ export default function AdminLayoutNavbarComponent(): JSX.Element {
               <SiteDefaultIcons />
               <span className="sr-only">{siteTitle}</span>
             </Link>
-            {siteRoutes.map((item, idx) => <Link
+            {siteRoutes.map((item) => <Link
               className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
               href={item.href}
-              key={idx}
+              key={item.href}
             >
               {item.component}
               {item.title}

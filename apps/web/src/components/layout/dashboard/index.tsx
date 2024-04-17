@@ -15,13 +15,13 @@ import {
 import { Button } from "@repo/ui/components/ui/button"
 import { Input } from "@repo/ui/components/ui/input"
 import { Sheet, SheetContent, SheetTrigger } from "@repo/ui/components/ui/sheet"
-import DashboardLayoutSidebarComponent from "./sidebar";
-import UserDropdownComponent from "../common/user-dropdown";
+import ThemeSwitcherComponent from "@ui/components/shared/theme-switcher";
 import { SiteDefaultIcons, siteTitle } from "@/config/const";
 import { siteRoutes } from "@/config/routes";
-import ThemeSwitcherComponent from "@ui/components/shared/theme-switcher";
+import UserDropdownComponent from "@/components/layout/common/user-dropdown";
+import DashboardLayoutSidebarComponent from "./sidebar";
 
-export default async function DashboardLayoutComponent({ children }: { children: ReactNode }) {
+export default function DashboardLayoutComponent({ children }: { children: ReactNode }): JSX.Element {
   return (
     <div className="flex flex-col w-full min-h-screen bg-muted/40">
       <DashboardLayoutSidebarComponent />
@@ -43,11 +43,11 @@ export default async function DashboardLayoutComponent({ children }: { children:
                   <SiteDefaultIcons />
                   <span className="sr-only">{siteTitle}</span>
                 </Link>
-                {siteRoutes.map((item, idx) =>
+                {siteRoutes.map((item) =>
                   <Link
-                    key={idx}
                     className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
                     href={item.href}
+                    key={item.href}
                   >
                     {item.component}
                     {item.title}
